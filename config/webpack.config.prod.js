@@ -157,11 +157,7 @@ module.exports = {
     // in `package.json`, in which case it will be the pathname of that URL.
     new DllReferencePlugin({
       // 描述 react 动态链接库的文件内容
-      manifest: require(path.join(paths.appBuild, 'react.manifest.json')),
-    }),
-    new DllReferencePlugin({
-      // 描述 polyfill 动态链接库的文件内容
-      manifest: require(path.join(paths.appBuild, 'polyfill.manifest.json')),
+      manifest: require(path.join(paths.appBuild, 'dll/react.manifest.json')),
     }),
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.

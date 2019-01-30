@@ -152,11 +152,7 @@ module.exports = {
     // In development, this will be an empty string.
     new DllReferencePlugin({
       // 描述 react 动态链接库的文件内容
-      manifest: require(path.join(paths.appPublic, 'react.manifest.json')),
-    }),
-    new DllReferencePlugin({
-      // 描述 polyfill 动态链接库的文件内容
-      manifest: require(path.join(paths.appPublic, 'polyfill.manifest.json')),
+      manifest: require(path.join(paths.appPublic, 'dll/react.manifest.json')),
     }),
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.

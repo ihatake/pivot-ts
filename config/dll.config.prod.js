@@ -11,7 +11,7 @@ const webpackConfig = merge(DllPluginConfig, {
   plugins: [
     new DllPlugin({
       name: '_dll_[name]',
-      path: path.join(paths.appBuild, '[name].manifest.json'),
+      path: path.join(paths.appBuild, 'dll/[name].manifest.json'),
     }),
   ]
 })

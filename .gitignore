@@ -8,7 +8,9 @@
 
 # production
 /dist
-
+/dist*.zip
+/_server/dist
+/_server/node_modules
 # misc
 .DS_Store
 .env.local

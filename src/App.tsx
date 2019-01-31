@@ -1,27 +1,41 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
-// import { observer } from 'mobx-react';
-// import {observable} from 'mobx';
-// import { Spin } from 'antd';
+import { inject, observer } from 'mobx-react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import { ITodoList } from './stores/todolistStore';
 import './styles/App.less';
 
-// import Page1 from './pages/Page1';
-import Page2 from './pages/Page2';
-import Page3 from './pages/Page3';
 const Page1 = Loadable({
   loader: () => import('./pages/Page1'),
-  loading: () => null,
+  loading: () => null
 });
-// const Page2 = ():any => import('./pages/Page2');
-// const Page3 = ():any => import('./pages/Page3');
+const Page2 = Loadable({
+  loader: () => import('./pages/Page2'),
+  loading: () => null
+});
+const Page3 = Loadable({
+  loader: () => import('./pages/Page3'),
+  loading: () => null
+});
 
-class App extends React.Component {
+interface P {
+  todoListStore?: ITodoList;
+}
+interface S {
+  [propName: string]: any;
+}
+
+@inject('todoListStore')
+@observer
+class App extends React.Component<P, S> {
   public render() {
     return (
       <Router>
         <div>
+          {this.props.todoListStore!.todos.map((item, i) => (
+            <div key={i}>{i}</div>
+          ))}
           <nav>
             <ul>
               <li>

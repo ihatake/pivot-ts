@@ -6,7 +6,7 @@ interface S {
   [propName: string]: any;
 }
 @observer
-class Page2 extends React.Component<{}, S> {
+class Home extends React.Component<{}, S> {
   @observable secondsPassed = 0;
   constructor(props?: any) {
     super(props);
@@ -27,12 +27,12 @@ class Page2 extends React.Component<{}, S> {
   }
   public render() {
     return (
-      <div className="Page2">
-        Page2
+      <div className="Home">
+        Home
         <span>Seconds passed: {this.secondsPassed} </span>
       </div>
     );
   }
 }
 
-export default Page2;
+export default Home;

@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-class Page3 extends React.Component {
+class Reports extends React.Component {
   public render() {
-    return <div className="Page3">Page3</div>;
+    return <div className="Reports">Reports</div>;
   }
   componentDidMount() {
     console.log('componentDidMount');
   }
 }
 
-export default Page3;
+export default Reports;

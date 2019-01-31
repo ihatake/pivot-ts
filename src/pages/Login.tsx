@@ -12,15 +12,15 @@ interface S {
 
 @inject('todoListStore')
 @observer
-class Page1 extends React.Component<P, S> {
+class Login extends React.Component<P, S> {
   constructor(props: P) {
     super(props);
     // this.changeTodoList.bind(this);
   }
   public render() {
     return (
-      <div className="Page1" onClick={()=>{this.changeTodoList();}}>
-        Page1
+      <div className="Login" onClick={()=>{this.changeTodoList();}}>
+        Login
       </div>
     );
   }
@@ -30,4 +30,4 @@ class Page1 extends React.Component<P, S> {
   }
 }
 
-export default Page1;
+export default Login;

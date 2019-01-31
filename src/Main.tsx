@@ -1,10 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
-
-import App from './App';
+import Router from './routers';
 import registerServiceWorker from './registerServiceWorker';
-
 import todoListStore from './stores/todolistStore';
 
 const stores = {
@@ -12,7 +10,7 @@ const stores = {
 };
 ReactDOM.render(
   <Provider {...stores}>
-    <App />
+    <Router />
   </Provider>,
   document.getElementById('root') as HTMLElement
 );

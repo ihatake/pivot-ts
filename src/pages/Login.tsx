@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
 import { ITodoList } from '../stores/todolistStore';
+import LoginBox from '../components/login/LoginBox';
 
 interface P {
   todoListStore?: ITodoList;
@@ -15,17 +16,15 @@ interface S {
 class Login extends React.Component<P, S> {
   constructor(props: P) {
     super(props);
-    // this.changeTodoList.bind(this);
   }
   public render() {
     return (
-      <div className="Login" onClick={()=>{this.changeTodoList();}}>
-        Login
+      <div className="Login">
+        <LoginBox />
       </div>
     );
   }
   changeTodoList(): void {
-    console.log('ss');
     this.props.todoListStore!.add();
   }
 }

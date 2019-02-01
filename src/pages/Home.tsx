@@ -17,7 +17,7 @@ class Home extends React.Component<{}, S> {
   }
   componentWillMount() {
     this.setState({
-      T: setInterval(() => {
+      T: setTimeout(() => {
         this.secondsPassed++;
       }, 1000)
     });

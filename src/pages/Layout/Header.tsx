@@ -20,7 +20,7 @@ class MHeader extends React.Component<P, S> {
         { name: '主页', icon: 'home', path: '/home' },
         { name: '数据管理', icon: 'calendar', path: '/dataMange' }
       ],
-      active: '0'
+      active: '-1'
     };
   }
   public render() {
@@ -40,7 +40,7 @@ class MHeader extends React.Component<P, S> {
           <Menu
             theme="dark"
             mode="horizontal"
-            defaultSelectedKeys={[this.state.active]}
+            selectedKeys={[this.state.active]}
             style={{ lineHeight: '64px' }}
             onSelect={params => {
               this.menuSelect(params);
@@ -62,9 +62,10 @@ class MHeader extends React.Component<P, S> {
       active: this.matchPath()
     });
   }
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps: P) {
+    console.log('componentWillReceiveProps');
     this.setState({
-      active: this.matchPath()
+      active: this.matchPath(nextProps)
     });
   }
   toggleSider(): void {
@@ -74,15 +75,11 @@ class MHeader extends React.Component<P, S> {
     const index: number = +params.key;
     this.props.history.push(this.state.menuList[index].path);
   }
-  matchPath(): string {
-    let active = '';
+  matchPath(props: P = this.props): string {
     const index = this.state.menuList.findIndex(
-      item => item.path === this.props.location.pathname
+      item => item.path === props.location.pathname
     );
-    if (index !== -1) {
-      active = `${index}`;
-    }
-    return active;
+    return  `${index}`;
   }
 }
 

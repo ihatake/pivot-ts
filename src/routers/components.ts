@@ -23,9 +23,14 @@ export const DataMange = Loadable({
   loader: () => import('../pages/DataMange'),
   loading: () => null
 });
-// 我的报表
-export const Reports = Loadable({
-  loader: () => import('../pages/Reports'),
+// 我的个人报表
+export const PersonalReports = Loadable({
+  loader: () => import('../pages/PersonalReports'),
+  loading: () => null
+});
+// 我的系统报表
+export const SystemReport = Loadable({
+  loader: () => import('../pages/SystemReports'),
   loading: () => null
 });
 // 我的收藏

@@ -11,12 +11,11 @@ import {
   Layout,
   Home,
   DataMange,
-  Reports,
+  PersonalReports,
+  SystemReport,
   Collection,
   Frequence
 } from './components';
-// import { createBrowserHistory } from 'history';
-// const history = createBrowserHistory();
 
 export default class BasicRoute extends React.Component {
   render() {
@@ -34,7 +33,8 @@ export default class BasicRoute extends React.Component {
                   path="/dataMange"
                   component={DataMange}
                 />
-                <Route name="Reports" path="/reports" component={Reports} />
+                <Route name="PersonalReports" path="/personalReports" component={PersonalReports} />
+                <Route name="SystemReport" path="/systemReport" component={SystemReport} />
                 <Route
                   name="Collection"
                   path="/collection"

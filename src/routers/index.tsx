@@ -14,7 +14,8 @@ import {
   PersonalReports,
   SystemReport,
   Collection,
-  Frequence
+  Frequence,
+  Reports,
 } from './components';
 
 export default class BasicRoute extends React.Component {
@@ -35,6 +36,7 @@ export default class BasicRoute extends React.Component {
                 />
                 <Route name="PersonalReports" path="/personalReports" component={PersonalReports} />
                 <Route name="SystemReport" path="/systemReport" component={SystemReport} />
+                <Route name="Reports" path="/reports/:do" component={Reports} />
                 <Route
                   name="Collection"
                   path="/collection"

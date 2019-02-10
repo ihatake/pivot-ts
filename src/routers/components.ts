@@ -33,6 +33,11 @@ export const SystemReport = Loadable({
   loader: () => import('../pages/SystemReports'),
   loading: () => null
 });
+// 报表详情页
+export const Reports = Loadable({
+  loader: () => import('../pages/Reports/index'),
+  loading: () => null
+});
 // 我的收藏
 export const Collection = Loadable({
   loader: () => import('../pages/Collection'),

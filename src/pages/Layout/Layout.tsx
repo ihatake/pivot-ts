@@ -14,7 +14,7 @@ class MLayout extends React.Component<P, S> {
   constructor(props: any) {
     super(props);
     this.state = {
-      collapsed: false
+      collapsed: this.props.location.pathname.includes('/reports/') || false
     };
   }
   toggle() {
@@ -37,6 +37,9 @@ class MLayout extends React.Component<P, S> {
           }}
         />
         <Layout>
+          {/* {!this.props.location.pathname.includes('/reports/') && (
+            <MSider collapsed={this.state.collapsed} />
+          )} */}
           <MSider collapsed={this.state.collapsed} />
           <MContent children={this.props.children} />
         </Layout>

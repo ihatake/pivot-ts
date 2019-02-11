@@ -28,7 +28,7 @@ class Home extends React.Component<{}, S> {
   public render() {
     return (
       <div className="Home">
-        Home
+        首页
         <span>Seconds passed: {this.secondsPassed} </span>
       </div>
     );

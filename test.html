@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      data-require="bootstrap@*"
+      data-semver="3.3.7"
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+      .table-cont {
+        /**make table can scroll**/
+        max-height: 200px;
+        overflow: auto;
+        /** add some style**/
+        /*padding: 2px;*/
+        background: #ddd;
+        margin: 20px 10px;
+        box-shadow: 0 0 1px 3px #ddd;
+      }
+      table{
+        transform-style: preserve-3d;
+        border-spacing: 0;
+      }
+      thead {
+        background-color: red;
+        transform: translate3d(0, 0, 1px);
+      }
+      tbody{
+        transform: translate3d(0, 0, 0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="table-cont" id="table-cont">
+      <!--看这里-->
+
+      <table class="table table-striped" >
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <script>
+      window.onload = function() {
+        var trs = [];
+        trs.length = 1000;
+        trs.fill(
+          '<tr><th scope="row">3</th><td>Larry</td><td>the Bird</td><td>@twitter</td></tr>'
+        );
+        $('#tbody').append(trs.join(''));
+        var tableCont = document.querySelector('#table-cont');
+        /**
+         * scroll handle
+         * @param {event} e -- scroll event
+         */
+        function scrollHandle(e) {
+          var scrollTop = this.scrollTop;
+          this.querySelector('thead').style.transform =
+            'translate3d(0,' + scrollTop + 'px, 1px)';
+        }
+
+        tableCont.addEventListener('scroll', scrollHandle);
+      };
+    </script>
+  </body>
+</html>
